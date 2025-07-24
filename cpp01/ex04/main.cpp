@@ -19,18 +19,18 @@ std::string	trim(const std::string &str)
 std::string	ReplaceInLine(const std::string &line, const std::string &s1, const std::string &s2)
 {
 	std::string	newLine;
-	size_t		i;
+	size_t		start;
 	size_t		found;
 
-	i = 0;
+	start = 0;
 	newLine = "";
-	while ((found = line.find(s1, i)) != std::string::npos) /* se nao encontrar nada, find retornar npos */
+	while ((found = line.find(s1, start)) != std::string::npos)
 	{
-		newLine += line.substr(i, found - i); /* newLine recebe o que vier antes de s1 encontrado */
-		newLine += s2; /* newLine recebe a s2 (no lugar que esta escrito s1) */
-		i = found + s1.length(); /* incrementa i para a posicao depois de s1, para continuar a procura */
+		newLine += line.substr(start, found - start);
+		newLine += s2;
+		start = found + s1.length();
 	}
-	newLine += line.substr(i); /* receber tudo que vier depois do ultimo s1 encontrado */
+	newLine += line.substr(start);
 	return (newLine);
 }
 
