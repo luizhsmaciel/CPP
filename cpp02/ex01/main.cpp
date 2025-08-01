@@ -2,14 +2,22 @@
 
 int	main(void)
 {
-	Fixed	a(10);
-	Fixed	b(2.44f);
+	Fixed		a;
+	Fixed const	b(10);
+	Fixed const c(42.42f);
+	Fixed const d(b);
 
-	int	val = a.getRawBits();
-	int	val2 = b.getRawBits();
+	a = Fixed(1234.4321f);
 
-	std::cout << "valor de a: " << val << std::endl;
-	std::cout << "valor de b: " << val2 << std::endl;
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
 	return (0);
 }

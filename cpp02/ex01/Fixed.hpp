@@ -25,4 +25,6 @@ class Fixed
 
 };
 
+std::ostream& operator<<(std::ostream& os, const Fixed& obj);
+
 #endif /* FIXED_HPP */
