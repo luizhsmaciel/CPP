@@ -2,16 +2,15 @@
 
 int	main(void)
 {
-	Fixed	a(10);
-	Fixed	b(6);
-	const Fixed	c(30);
-	const Fixed	d(7);
+	Fixed a;
+	Fixed const b(Fixed( 5.05f ) * Fixed( 2 ));
 
-	Fixed 	menor = (a / b);
-	const Fixed 	maior = Fixed::max(c, d);
-
-	std::cout << "Resultado menor: " << Fixed::min(a, b) << std::endl;
-	std::cout << "Resultado maior: " << maior << std::endl;
-	
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max(a, b) << std::endl;
 	return (0);
 }
