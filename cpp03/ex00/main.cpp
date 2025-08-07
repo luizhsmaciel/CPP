@@ -2,18 +2,25 @@
 
 int main(void)
 {
-	ClapTrap maciel;
-	ClapTrap luiz("Luiz");
-	ClapTrap henrique(luiz);
+	ClapTrap jose;
+	ClapTrap joao("joao");
+	ClapTrap maria(jose);
+	ClapTrap marta;
 
-	maciel.attack("Luiz");
-	luiz.attack("Henrique");
+	marta = joao;
 
-	luiz.takeDamage(9);
-	luiz.beRepaired(1);
-	luiz.takeDamage(2);
+	jose.attack("joao");
+	joao.attack("maria");
+	/* No special ability */
 
-	luiz.takeDamage(1);
+	joao.takeDamage(9);
+	joao.beRepaired(1);
+	joao.takeDamage(2);
 
+	joao.takeDamage(1);
+	joao.attack("jose");
+	joao.beRepaired(10);
+
+	/* No special ability */
 	return (0);
 }
