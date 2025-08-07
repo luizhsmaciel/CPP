@@ -10,7 +10,7 @@
 	YELLOW		"\033[1;33m"
 	MAGENTA		"\033[1;35m"
 	CYAN_BOLD	"\033[1;36m"
-	CYAN 		"\033[0;36m"
+	LIGHT BLUE	"\033[1;94m"
 */
 
 class ClapTrap

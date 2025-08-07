@@ -13,9 +13,9 @@ ScavTrap::ScavTrap() : ClapTrap()
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap Constructor with parameters called\n";
-	this->_hitPoints = 100;
+	// this->_hitPoints = 100;
 	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	// this->_attackDamage = 20;
 	this->_maxHitPoints = 100;
 	std::cout << "\033[1;33m" <<"ScavTrap " << _name << " created!" << "\033[0m\n";
 }

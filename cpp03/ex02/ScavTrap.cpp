@@ -57,5 +57,5 @@ void	ScavTrap::guardGate()
 	if (this->_energyPoints > 0 && this->_hitPoints > 0)
 		std::cout << "ScavTrap " << this->_name << " is in Gate keeper mode\n";
 	else
-		std::cout << "ScavTrap " << this->_name << " cannot enter Gate keeper mode due to lack of energy or hit points!\n";
+		std::cout << "\033[1;31m" << "ScavTrap " << this->_name << " cannot enter Gate keeper mode due to lack of energy or hit points!" << "\033[0m\n";
 }
