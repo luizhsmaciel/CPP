@@ -2,6 +2,7 @@
 #define CLAPTRAP_HPP
 
 #include <iostream>
+#include <string>
 
 /* Just to remember the colors
 	RESET		"\033[0m"
