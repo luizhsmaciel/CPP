@@ -4,8 +4,8 @@ WrongCat::WrongCat() : WrongAnimal()
 {
 	// char* teste = new char[100];
 	// (void)teste;
-	std::cout << "WrongCat Default Constructor called!\n";
 	this->type = "WrongCat";
+	std::cout << "WrongCat Default Constructor called!\n";
 	std::cout << "\033[1;35m" <<"WrongCat " << this->type << " created!" << "\033[0m\n";
 }
 

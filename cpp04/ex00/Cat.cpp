@@ -2,8 +2,8 @@
 
 Cat::Cat() : Animal()
 {
-	this->type = "Cat";
 	std::cout << "Cat Default Constructor called!\n";
+	this->type = "Cat";
 	std::cout << "\033[1;35m" <<"Cat " << this->type << " created!" << "\033[0m\n";
 }
 

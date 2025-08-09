@@ -2,8 +2,8 @@
 
 Dog::Dog() : Animal()
 {
-	this->type = "Dog";
 	std::cout << "Dog Default Constructor called!\n";
+	this->type = "Dog";
 	std::cout << "\033[1;33m" <<"Dog " << this->type << " created!" << "\033[0m\n";
 }
 
