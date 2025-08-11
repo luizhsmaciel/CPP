@@ -1,0 +1,23 @@
+#ifndef CAT_HPP
+#define CAT_HPP
+
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+/* inclui a variavel brain */
+class Cat : public Animal
+{
+	private:
+		Brain* brain;
+	public:
+		Cat();
+		Cat(const Cat& other);
+		Cat& operator=(const Cat& other);
+		~Cat();
+
+		void	makeSound() const;
+		Brain*	getBrain() const;
+		void	printIdeas() const;
+};
+
+#endif /* CAT_HPP */
