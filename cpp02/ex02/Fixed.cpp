@@ -104,27 +104,39 @@ bool	Fixed::operator!=(const Fixed& other) const
 /* Arithmetic operators (conversion to float because the current value is at a fixed point) */
 Fixed	Fixed::operator+(const Fixed& other) const
 {
-	return (Fixed(this->toFloat() + other.toFloat()));
+	Fixed	result;
+
+	result.setRawBits(this->value + other.value);
+	return (result);
 }
 
 Fixed	Fixed::operator-(const Fixed& other) const
 {
-	return (Fixed(this->toFloat() - other.toFloat()));
+	Fixed	result;
+
+	result.setRawBits(this->value - other.value);
+	return (result);
 }
 
 Fixed	Fixed::operator*(const Fixed& other) const
 {
-	return (Fixed(this->toFloat() * other.toFloat()));
+	Fixed	result;
+
+	result.setRawBits((this->value * other.value) >> fractionalBits);
+	return (result);
 }
 
 Fixed	Fixed::operator/(const Fixed& other) const
 {
+	Fixed	result;
+
 	if (other.value == 0)
 	{
 		std::cerr << "Error: division by zero!" << std::endl;
-		return (Fixed());
+		return (Fixed(0));
 	}
-	return (Fixed(this->toFloat() / other.toFloat()));
+	result.setRawBits((this->value << fractionalBits) / other.value);
+	return (result);
 }
 
 /* Pre-increment */
