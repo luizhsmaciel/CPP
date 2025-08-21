@@ -3,9 +3,8 @@
 
 #include "ClapTrap.hpp"
 
-/* Virtual inheritance to avoid problem in DiamondTrap.
-This ensures only one shared ClapTrap base is created, 
-even when both FragTrap and ScavTrap are inherited together. */
+/* Using virtual inheritance to avoid the diamond problem.
+Virtual inheritance ensures that there is only one ClapTrap base in DiamondTrap. */
 
 class ScavTrap : public virtual ClapTrap
 {

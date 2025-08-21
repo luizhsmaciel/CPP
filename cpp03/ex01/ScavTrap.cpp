@@ -29,9 +29,15 @@ ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 /* I call the base class assignment operator */
 ScavTrap& ScavTrap::operator=(const ScavTrap& other)
 {
+	std::string	temp;
+
+	temp = this->_name;
 	std::cout << "ScavTrap Copy assignment operator called\n";
 	if (this != &other)
+	{
 		ClapTrap::operator=(other);
+		std::cout << "\033[1;33m" <<"ScavTrap " << other._name << " assigned from " << temp << "\033[0m\n";
+	}
 	return (*this);
 }
 

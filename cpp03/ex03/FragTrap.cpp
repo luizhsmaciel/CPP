@@ -14,9 +14,9 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "FragTrap Constructor with parameters called\n";
 	this->_hitPoints = 100;
-	// this->_energyPoints = 100;
+	this->_energyPoints = 100;
 	this->_attackDamage = 30;
-	// this->_maxHitPoints = 100;
+	this->_maxHitPoints = 100;
 	std::cout << "\033[1;35m" <<"FragTrap " << _name << " created!" << "\033[0m\n";
 }
 
