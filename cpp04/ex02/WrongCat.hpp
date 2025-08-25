@@ -6,6 +6,7 @@
 class WrongCat : public WrongAnimal
 {
 	public:
+		// char* teste;
 		WrongCat();
 		WrongCat(const WrongCat& other);
 		WrongCat& operator=(const WrongCat& other);

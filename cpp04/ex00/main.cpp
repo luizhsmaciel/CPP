@@ -28,18 +28,18 @@ int	main(void)
 	const	Animal*	cat = new Cat();
 
 	std::cout << "\033[1;36m" << "=== Testing getType() ===" << "\033[0m\n";
-    std::cout << "generic type: " << generic->getType() << "\n";
-    std::cout << "dog type: " << dog->getType() << "\n";
-    std::cout << "cat type: " << cat->getType() << "\n";
+	std::cout << "generic type: " << generic->getType() << "\n";
+	std::cout << "dog type: " << dog->getType() << "\n";
+	std::cout << "cat type: " << cat->getType() << "\n";
 
 	std::cout << "\033[1;36m" << "=== Testing makeSound() (Polymorphism) ===" << "\033[0m\n";
 	generic->makeSound();
-    dog->makeSound();
-    cat->makeSound();
+	dog->makeSound();
+	cat->makeSound();
 
 	std::cout << "\033[1;36m" << "=== Cleaning up Animals ===" << "\033[0m\n";
 	delete generic;
-    delete dog;
+	delete dog;
 	delete cat;
 
 	std::cout << "\n";
@@ -49,7 +49,7 @@ int	main(void)
 
 	std::cout << "\033[1;36m" << "=== Testing getType() ===" << "\033[0m\n";
 	std::cout << "wrongGeneric type: " << wrongGeneric->getType() << "\n";
-    std::cout << "wrongCat type: " << wrongCat->getType() << "\n";
+	std::cout << "wrongCat type: " << wrongCat->getType() << "\n";
 
 	std::cout << "\033[1;36m" << "=== Testing makeSound() without polymorphism ===" << "\033[0m\n";
 	wrongGeneric->makeSound();

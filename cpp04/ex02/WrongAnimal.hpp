@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 
-/* makeSound is not virtual, so it always calls the base version.
-Destructor is not virtual, so it does not call the child destructor.
+/* makeSound is non-virtual, so it always calls the base version.
+Destructor is non-virtual, so it doesn't call the derived class's destructor.
 This can cause resource leaks if the derived class allocates memory. */
 class WrongAnimal
 {

@@ -2,10 +2,10 @@
 
 WrongCat::WrongCat() : WrongAnimal()
 {
-	// char* teste = new char[100];
-	// (void)teste;
-	this->type = "WrongCat";
+	// this->teste = new char[100];
+	// (void)this->teste;
 	std::cout << "WrongCat Default Constructor called!\n";
+	this->type = "WrongCat";
 	std::cout << "\033[1;35m" <<"WrongCat " << this->type << " created!" << "\033[0m\n";
 }
 
@@ -26,6 +26,7 @@ WrongCat& WrongCat::operator=(const WrongCat& other)
 
 WrongCat::~WrongCat()
 {
+	// delete[] this->teste;
 	std::cout << "WrongCat Destructor called\n";
 }
 

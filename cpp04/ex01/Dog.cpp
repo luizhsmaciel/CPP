@@ -1,7 +1,6 @@
 #include "Dog.hpp"
 
-/* I added deep copying of 'brain' to the constructors and the copy assignment operator.
-And of course, I deleted 'brain' in the destructor. */
+/* Creating 'Brain' */
 Dog::Dog() : Animal()
 {
 	std::cout << "Dog Default Constructor called!\n";
@@ -10,6 +9,7 @@ Dog::Dog() : Animal()
 	std::cout << "\033[1;33m" <<"Dog " << this->type << " created!" << "\033[0m\n";
 }
 
+/* I added deep copying of 'brain' to the constructors and the copy assignment operator. */
 Dog::Dog(const Dog& other) : Animal(other)
 {
 	std::cout << "Dog Copy constructor called!\n";
@@ -17,7 +17,7 @@ Dog::Dog(const Dog& other) : Animal(other)
 	std::cout << "\033[1;33m" <<"Dog " << this->type << " created!" << "\033[0m\n";
 }
 
-/* I use the base class constructor to build with all the attributes of the base class
+/* I use the base class constructor to build with all the attributes of the base class.
 I delete the previous 'brain' and allocate a new 'brain' equal to 'other' */
 Dog& Dog::operator=(const Dog& other)
 {
@@ -32,6 +32,7 @@ Dog& Dog::operator=(const Dog& other)
 	return (*this);
 }
 
+/* I deleted 'brain' in the destructor. */
 Dog::~Dog()
 {
 	delete this->brain;
@@ -51,6 +52,9 @@ Brain*	Dog::getBrain() const
 void	Dog::printIdeas() const
 {
 	std::cout << "Dog ideas:\n";
-    std::cout << " - " << this->brain->getIdea(0) << "\n";
-    std::cout << " - " << this->brain->getIdea(1) << "\n";
+	for (int i = 0; i < 100; i++)
+	{
+		if (!this->brain->getIdea(i).empty())
+			std::cout << " - " << this->brain->getIdea(i) << "\n";
+	}
 }

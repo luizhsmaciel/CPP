@@ -43,5 +43,24 @@ int	main(void)
 	for(int i = 0; i < size; i++)
 		delete animals[i];
 
+	std::cout << "\n";
+	std::cout << "=== Deep Copy Test ===\n";
+	
+	Dog	caramel;
+
+	caramel.getBrain()->setIdea(0, "Eat shoes!");
+	caramel.getBrain()->setIdea(1, "Chase people!");
+
+	Dog	sleeve_lint(caramel); /* deep copy */
+
+	caramel.getBrain()->setIdea(0, "Eat bone!");
+	caramel.getBrain()->setIdea(1, "Chase cats!");
+
+	std::cout << "caramel ";
+	caramel.printIdeas();
+
+	std::cout << "sleeve_lint ";
+	sleeve_lint.printIdeas();
+
 	return (0);
 }

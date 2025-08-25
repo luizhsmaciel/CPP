@@ -4,7 +4,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-/* inclui a variavel brain */
+/* Includes the 'Brain' pointer */
 class Dog : public Animal
 {
 	private:
