@@ -44,7 +44,7 @@ int	main(void)
 		delete animals[i];
 
 	std::cout << "\n";
-	std::cout << "=== Deep Copy Test ===\n";
+	std::cout << "\033[1;94m" << "=== Deep Copy Test ===" << "\033[0m\n";
 	
 	Dog	caramel;
 
@@ -61,6 +61,8 @@ int	main(void)
 
 	std::cout << "sleeve_lint ";
 	sleeve_lint.printIdeas();
+
+	// std::cout << "\033[1;94m" << "=== Abstract Class Test ===" << "\033[0m\n";
 
 	// Animal* test = new Animal;
 	
