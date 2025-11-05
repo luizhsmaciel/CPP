@@ -13,6 +13,8 @@
 #define CYAN_BOLD	"\033[1;36m"
 #define LIGHT_BLUE	"\033[1;94m"
 
+class Form;
+
 class Bureaucrat
 {
 	private:
@@ -42,7 +44,7 @@ class Bureaucrat
 		int				getGrade() const;
 		void			increment();
 		void			decrement();
-		
+		void			signForm(Form& form);
 		
 };
 

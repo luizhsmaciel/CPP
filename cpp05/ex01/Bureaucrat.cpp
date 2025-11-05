@@ -1,8 +1,9 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : _name("default"), _grade(150)
 {
-	std::cout << CYAN_BOLD << "Default constructor: " << RESET;
+	std::cout << MAGENTA << "Bureaucrat: " << CYAN_BOLD << "Default constructor: " << RESET;
 	std::cout << "Bureaucrat " << _name << " created with grade " << _grade << "\n";
 }
 
@@ -13,13 +14,13 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 	else if (grade > 150)
 		throw GradeTooLowException();
 	this->_grade = grade;
-	std::cout << CYAN_BOLD << "Constructor with parameters: " << RESET;
+	std::cout << MAGENTA << "Bureaucrat: " << CYAN_BOLD << "Constructor with parameters: " << RESET;
 	std::cout << "Bureaucrat " << _name << " created with grade " << _grade << "\n";
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other) : _name(other._name), _grade(other._grade)
 {
-	std::cout << CYAN_BOLD << "Copy constructor: " << RESET;
+	std::cout << MAGENTA << "Bureaucrat: " << CYAN_BOLD << "Copy constructor: " << RESET;
 	std::cout << "Bureaucrat " << _name << " created with grade " << _grade << "\n";
 }
 
@@ -27,14 +28,14 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this != &other)
 		this->_grade = other._grade;
-	std::cout << CYAN_BOLD << "Copy Assignment Operator: " << RESET;
+	std::cout << MAGENTA << "Bureaucrat: " << CYAN_BOLD << "Copy Assignment Operator: " << RESET;
 	std::cout << "Bureaucrat " << _name << " created with grade " << _grade << "\n";
 	return (*this);
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << CYAN_BOLD << "Destructor called!" << RESET << "\n";
+	std::cout << MAGENTA << "Bureaucrat: " << CYAN_BOLD << "Destructor called!" << RESET << "\n";
 }
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()
@@ -75,4 +76,18 @@ std::ostream& operator<<(std::ostream &os, Bureaucrat const &obj)
 {
 	os << obj.getName() << ", bureaucrat grade " << obj.getGrade();
 	return (os);
+}
+
+void	Bureaucrat::signForm(Form& form)
+{
+	try
+	{
+		form.beSigned(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << RED << this->_name << " couldn't sign " << form.getName() << " because: " << e.what() << RESET << '\n';
+		return ;
+	}
+	std::cout << this->_name << " signed " << form.getName() << "\n";
 }

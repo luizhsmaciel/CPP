@@ -1,31 +1,40 @@
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
-Form::Form(): _name("default"), _signed(false), _gradeToSign(0), _gradeToExec(0)
+Form::Form(): _name("default"), _signed(false), _gradeToSign(150), _gradeToExec(150)
 {
-	std::cout << CYAN_BOLD << "Default constructor" << RESET << "\n";
+	std::cout << MAGENTA << "Form: " << CYAN_BOLD << "Default constructor: " << RESET;
+	std::cout << "Form " << this->_name << " created!" << "\n";
 }
 
 Form::Form(const std::string name, const int gradeToSign, const int gradeToExec) : _name(name), _signed(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
 {
-	std::cout << CYAN_BOLD << "Constructor with parameters" << RESET << "\n";
+	if (gradeToSign < 1 || gradeToExec < 1)
+		throw GradeTooHighException();
+	else if (gradeToSign > 150 || gradeToExec > 150)
+		throw GradeTooLowException();
+	std::cout << MAGENTA << "Form: " << CYAN_BOLD << "Constructor with parameters: " << RESET;
+	std::cout << "Form " << this->_name << " created!" << "\n";
 }
 
 Form::Form(const Form& other) : _name(other._name), _signed(other._signed), _gradeToSign(other._gradeToSign), _gradeToExec(other._gradeToExec)
 {
-	std::cout << CYAN_BOLD << "Copy constructor" << RESET << "\n";
+	std::cout << MAGENTA << "Form: " << CYAN_BOLD << "Copy constructor: " << RESET;
+	std::cout << "Form " << this->_name << " created!" << "\n";
 }
 
 Form& Form::operator=(const Form& other)
 {
 	if (this != &other)
 		this->_signed = other._signed;
-	std::cout << CYAN_BOLD << "Copy Assignment Operator" << RESET << "\n";
+	std::cout << MAGENTA << "Form: " << CYAN_BOLD << "Copy Assignment Operator: " << RESET;
+	std::cout << "Form " << this->_name << " created!" << "\n";
 	return (*this);
-}
+}     
 
 Form::~Form()
 {
-	std::cout << CYAN_BOLD << "Destructor called!" << RESET << "\n";
+	std::cout << MAGENTA << "Form: " << CYAN_BOLD << "Destructor called!" << RESET << "\n";
 }
 
 const char* Form::GradeTooHighException::what() const throw()
@@ -63,7 +72,7 @@ std::ostream& operator<<(std::ostream &os, const Form& obj)
 	os << "Form name: " << obj.getName() << "\n";
 	obj.getSigned() ? os << "Signed: True\n" : os << "Signed: False\n"; 
 	os <<  "Grade to sign: " << obj.getSign() << "\n";
-	os << "Grade to execute: " << obj.getExec();
+	os << "Grade to execute: " << obj.getExec() << "\n";
 	return (os);
 }
 

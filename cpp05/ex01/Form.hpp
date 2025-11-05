@@ -1,9 +1,9 @@
 #ifndef FORM_HPP
 #define FORM_HPP
 
+#include <string>
 #include <iostream>
 #include <exception>
-#include "Bureaucrat.hpp"
 
 #define RESET		"\033[0m"
 #define RED			"\033[1;31m"
@@ -13,13 +13,15 @@
 #define CYAN_BOLD	"\033[1;36m"
 #define LIGHT_BLUE	"\033[1;94m"
 
+class Bureaucrat;
+
 class Form
 {
 	private:
 		const std::string	_name;
 		bool				_signed;
-		int					_gradeToSign;
-		int					_gradeToExec;
+		const int			_gradeToSign;
+		const int			_gradeToExec;
 
 	public:
 		Form();
@@ -45,7 +47,6 @@ class Form
 		int			getSign() const;
 		int			getExec() const;
 		void		beSigned(const Bureaucrat& bureaucrat);
-
 
 };
 
