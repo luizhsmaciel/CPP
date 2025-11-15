@@ -2,6 +2,8 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
+#include <ctime>
+#include <cstdlib>
 
 class RobotomyRequestForm : public AForm
 {
@@ -14,6 +16,8 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(const RobotomyRequestForm& other);
 		RobotomyRequestForm& operator=(RobotomyRequestForm& other);
 		~RobotomyRequestForm();
+
+		void	execute(Bureaucrat const & executor) const;
 
 };
 

@@ -32,9 +32,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 	std::cout << YELLOW << "ShrubberyCreationForm: " << CYAN_BOLD << "Destructor called!" << RESET << "\n";
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const & bureaucrat) const
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	AForm::execute(bureaucrat);
+	AForm::execute(executor);
 
 	std::string file = this->_target + "_shrubbery";
 	std::ofstream outfile(file.c_str());
