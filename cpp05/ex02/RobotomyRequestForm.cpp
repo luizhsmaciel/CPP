@@ -18,7 +18,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AFo
 	std::cout << "RobotomyRequestForm " << this->_target << " created!" << "\n";
 }
 
-RobotomyRequestForm& RobotomyRequestForm::operator=(RobotomyRequestForm& other)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
 {
 	if (this != &other)
 	{
