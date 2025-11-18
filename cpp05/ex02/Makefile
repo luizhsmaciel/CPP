@@ -1,6 +1,7 @@
 NAME	= ex02
 FLAGS	= -Wall -Wextra -Werror -std=c++98
-SRCS	= main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
+SRCS	= main.cpp AForm.cpp Bureaucrat.cpp ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 OBJS	= ${SRCS:.cpp=.o}
 
 all: ${NAME}
