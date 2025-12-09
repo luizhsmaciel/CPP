@@ -2,6 +2,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "AForm.hpp"
 
 Intern::Intern()
 {

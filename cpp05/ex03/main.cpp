@@ -4,7 +4,6 @@
 #include "PresidentialPardonForm.hpp"
 #include "Intern.hpp"
 
-
 int main(void)
 {
 	try
@@ -15,11 +14,12 @@ int main(void)
 
 		luiz.signForm(*rrf);
 		luiz.executeForm(*rrf);
+		delete (rrf);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
+
 	return (0);
 }

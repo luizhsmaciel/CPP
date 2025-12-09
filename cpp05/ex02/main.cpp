@@ -3,7 +3,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-
 int main(void)
 {
 	std::srand(std::time(NULL));
