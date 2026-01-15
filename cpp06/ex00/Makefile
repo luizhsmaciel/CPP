@@ -1,4 +1,4 @@
-NAME	= ex00
+NAME	= convert
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 SRCS	= main.cpp ScalarConverter.cpp 
 OBJS	= ${SRCS:.cpp=.o}

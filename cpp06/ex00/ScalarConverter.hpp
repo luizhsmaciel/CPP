@@ -3,6 +3,9 @@
 
 #include <string>
 #include <iostream>
+#include <limits>
+#include <cmath>
+#include <iomanip>
 
 /* Utility class */
 /* Define OCF as private so that it is not possible to instantiate a ScalarConverter. */
