@@ -3,6 +3,9 @@
 
 #include <stdint.h>
 
+struct Data;
+
+/* uintptr_t. An unsigned integer large enough to store any pointer. */
 class Serializer
 {
 	private:
@@ -12,8 +15,8 @@ class Serializer
 		~Serializer();
 
 	public:
-		// uintptr_t	serialize(Data* ptr);
-		// Data*		deserialize(uintptr_t raw);
+		static uintptr_t	serialize(Data* ptr);
+		static Data*		deserialize(uintptr_t raw);
 
 };
 
