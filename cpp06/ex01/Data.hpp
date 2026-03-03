@@ -3,8 +3,7 @@
 
 struct Data
 {
-	char *ptr;
+	char	*ptr;
 };
-
 
 #endif /* DATA_HPP */
