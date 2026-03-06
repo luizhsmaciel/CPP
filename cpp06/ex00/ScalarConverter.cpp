@@ -44,7 +44,12 @@ static void	printFloat(double value)
 	else if (value < -std::numeric_limits<float>::max() || value > std::numeric_limits<float>::max())
 		std::cerr << "float:  impossible\n";
 	else
+	{
+		std::ios oldState(NULL);
+		oldState.copyfmt(std::cout);
 		std::cout << "float:  " << std::fixed << std::setprecision(1) << static_cast<float>(value) << "f\n";
+		std::cout.copyfmt(oldState);
+	}
 }
 
 static void	printDouble(double value)
@@ -54,7 +59,12 @@ static void	printDouble(double value)
 	else if (std::isinf(value))
 		std::cout << "double: " << (value < 0 ? "-inf" : "+inf") << "\n";
 	else
+	{
+		std::ios oldState(NULL);
+		oldState.copyfmt(std::cout);
 		std::cout << "double: " << std::fixed << std::setprecision(1) << value << "\n";
+		std::cout.copyfmt(oldState);
+	}
 }
 
 static bool	isValidLiteral(double *value, const std::string &literal)
