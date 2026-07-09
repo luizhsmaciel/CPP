@@ -84,5 +84,67 @@ int	main(void)
 	{
 		std::cout << "exception (empty array): " << e.what() << std::endl;
 	}
+
+	/* extra tests */
+	/* std::cout << YELLOW << "┌───────────────┐" << RESET << std::endl;
+	std::cout << YELLOW << "│   push_back   │" << RESET << std::endl;
+	std::cout << YELLOW << "└───────────────┘" << RESET << std::endl;
+	Array<int> arrPush(3);
+	arrPush[0] = 1;
+	arrPush[1] = 2;
+	arrPush[2] = 3;
+	std::cout << CYAN_BOLD << "Before (size=" << arrPush.size() << "): " << std::endl;
+	for (unsigned int i = 0; i < arrPush.size(); i++)
+		std::cout << "arrPush[" << i << "] = " << arrPush[i] << std::endl;
+	std::cout << RESET << std::endl;
+	arrPush.push_back(99);
+	std::cout << CYAN_BOLD << "After (size=" << arrPush.size() << "): " << std::endl;
+	for (unsigned int i = 0; i < arrPush.size(); i++)
+		std::cout << "arrPush[" << i << "] = " << arrPush[i] << std::endl;
+	std::cout << RESET << std::endl;
+
+	std::cout << YELLOW << "┌───────────────┐" << RESET << std::endl;
+	std::cout << YELLOW << "│   pop_back    │" << RESET << std::endl;
+	std::cout << YELLOW << "└───────────────┘" << RESET << std::endl;
+	arrPush.pop_back();
+	std::cout << "pop_back..." << std::endl;
+	std::cout << CYAN_BOLD << "After pop (size=" << arrPush.size() << "): " << std::endl;
+	for (unsigned int i = 0; i < arrPush.size(); i++)
+		std::cout << "arrPush[" << i << "] = " << arrPush[i] << std::endl;
+	std::cout << RESET << std::endl;
+	try
+	{
+		Array<int> arrEmpty;
+		arrEmpty.pop_back();
+	}
+	catch (std::exception& e)
+	{
+		std::cout << "exception: " << e.what() << std::endl;
+	}
+
+	std::cout << YELLOW << "┌───────────────┐" << RESET << std::endl;
+	std::cout << YELLOW << "│   remove_at   │" << RESET << std::endl;
+	std::cout << YELLOW << "└───────────────┘" << RESET << std::endl;
+	Array<int> arrRemove(5);
+	for (unsigned int i = 0; i < arrRemove.size(); i++)
+		arrRemove[i] = i + 5;
+	std::cout << CYAN_BOLD << "Before (size=" << arrRemove.size() << "): " << std::endl;
+	for (unsigned int i = 0; i < arrRemove.size(); i++)
+		std::cout << "arrRemove[" << i << "] = " << arrRemove[i] << std::endl;
+	std::cout << RESET << std::endl;
+	arrRemove.remove_at(2);
+	std::cout << CYAN_BOLD << "After (size=" << arrRemove.size() << "): " << std::endl;
+	for (unsigned int i = 0; i < arrRemove.size(); i++)
+		std::cout << "arrRemove[" << i << "] = " << arrRemove[i] << std::endl;
+	std::cout << RESET << std::endl;
+	try
+	{
+		arrRemove.remove_at(99);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << "exception: " << e.what() << std::endl;
+	}
+	std::cout << RESET;*/
 	return (0);
 }

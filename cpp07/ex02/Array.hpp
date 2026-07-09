@@ -21,6 +21,10 @@ class Array
 		T&				operator[](unsigned int index);
 		const T&		operator[](unsigned int index) const;
 
+		void			push_back(const T& value);
+		void			pop_back();
+		void			remove_at(unsigned int index);
+
 };
 
 template <typename T>
@@ -82,5 +86,48 @@ unsigned int	Array<T>::size() const
 {
 	return (_size);
 }
+
+/* extra fuctions */
+/*
+template <typename T>
+void Array<T>::push_back(const T& value)
+{
+	T* newData = new T[_size + 1]();
+	for (unsigned int i = 0; i < _size; i++)
+		newData[i] = _data[i];
+	newData[_size] = value;
+	delete[] _data;
+	_data = newData;
+	_size += 1;
+}
+
+template <typename T>
+void Array<T>::pop_back()
+{
+	if (_size == 0)
+		throw std::exception();
+	T* newData = new T[_size - 1]();
+	for (unsigned int i = 0; i < _size - 1; i++)
+		newData[i] = _data[i];
+	delete[] _data;
+	_data = newData;
+	_size -= 1;
+}
+
+template <typename T>
+void Array<T>::remove_at(unsigned int index)
+{
+	if (index >= _size)
+		throw std::exception();
+	T* newData = new T[_size - 1]();
+	for (unsigned int i = 0; i < index; i++)
+		newData[i] = _data[i];
+	for (unsigned int i = index; i < _size - 1; i++)
+		newData[i] = _data[i + 1];
+	delete[] _data;
+	_data = newData;
+	_size -= 1;
+}
+*/
 
 #endif /* ARRAY_HPP */
