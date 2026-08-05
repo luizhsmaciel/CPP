@@ -1,5 +1,4 @@
 #include "RPN.hpp"
-#include <climits>
 
 /* OCF */
 RPN::RPN() {}
@@ -18,7 +17,7 @@ RPN::~RPN() {}
 /* static functions */
 static bool	stringToDouble(const std::string& s, double& value)
 {
-	std::stringstream ss (s);
+	std::stringstream ss(s);
 	ss >> value;
 	return (!ss.fail() && ss.eof());
 }
